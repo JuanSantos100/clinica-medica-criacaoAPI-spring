@@ -1,6 +1,10 @@
 package minha.api.MinhaAPI.controller;
 
+import jakarta.validation.Valid;
 import minha.api.MinhaAPI.paciente.DadosCadastroPaciente;
+import minha.api.MinhaAPI.paciente.Paciente;
+import minha.api.MinhaAPI.paciente.PacienteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,9 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PacienteController {
 
-    @PostMapping
-    public void cadastrarPaciente(@RequestBody DadosCadastroPaciente dados) {
+    @Autowired
+    private PacienteRepository repository;
 
-        System.out.println("Dados recebidos: " + dados);
+    @PostMapping
+    public void cadastrarPaciente(@RequestBody @Valid DadosCadastroPaciente dados) {
+
+        repository.save(new Paciente(dados));
     }
 }

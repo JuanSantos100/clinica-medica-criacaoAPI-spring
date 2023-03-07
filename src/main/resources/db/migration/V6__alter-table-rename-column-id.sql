@@ -1,0 +1,1 @@
+ALTER TABLE pacientes RENAME COLUMN id_paciente TO id;

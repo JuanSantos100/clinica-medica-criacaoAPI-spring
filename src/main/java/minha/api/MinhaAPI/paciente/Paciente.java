@@ -12,6 +12,10 @@ import minha.api.MinhaAPI.endereco.Endereco;
 @EqualsAndHashCode(of = "id")
 public class Paciente {
 
+    public Paciente() {
+
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -30,5 +34,7 @@ public class Paciente {
         this.cpf = dados.cpf();
         this.endereco = new Endereco(dados.endereco());
     }
+
+
 
 }

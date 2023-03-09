@@ -1,0 +1,1 @@
+alter table medicos add sn_ativo char(1) not null default 'S';

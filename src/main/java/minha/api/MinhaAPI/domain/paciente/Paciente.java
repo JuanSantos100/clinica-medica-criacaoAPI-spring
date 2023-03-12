@@ -1,10 +1,10 @@
-package minha.api.MinhaAPI.paciente;
+package minha.api.MinhaAPI.domain.paciente;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import minha.api.MinhaAPI.endereco.Endereco;
+import minha.api.MinhaAPI.domain.endereco.Endereco;
 @Table(name = "pacientes")
 @Entity(name = "paciente")
 @Getter

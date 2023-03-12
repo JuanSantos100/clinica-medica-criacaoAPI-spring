@@ -1,7 +1,7 @@
-package minha.api.MinhaAPI.medico;
+package minha.api.MinhaAPI.domain.medico;
 
 import jakarta.validation.constraints.NotNull;
-import minha.api.MinhaAPI.endereco.DadosEndereco;
+import minha.api.MinhaAPI.domain.endereco.DadosEndereco;
 
 public record DadosAtualizacaoMedico(
         @NotNull

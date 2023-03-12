@@ -1,4 +1,4 @@
-package minha.api.MinhaAPI.medico;
+package minha.api.MinhaAPI.domain.medico;
 
 public enum Especialidade {
     ORTOPEDIA,

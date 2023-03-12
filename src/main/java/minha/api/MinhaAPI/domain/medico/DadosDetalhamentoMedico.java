@@ -1,6 +1,6 @@
-package minha.api.MinhaAPI.medico;
+package minha.api.MinhaAPI.domain.medico;
 
-import minha.api.MinhaAPI.endereco.Endereco;
+import minha.api.MinhaAPI.domain.endereco.Endereco;
 
 public record DadosDetalhamentoMedico(Long id, String nome, String email, String crm, String telefone, Especialidade especialidade, Endereco endereco ) {
 

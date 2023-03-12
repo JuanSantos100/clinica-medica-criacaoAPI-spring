@@ -1,7 +1,11 @@
 package minha.api.MinhaAPI.controller;
 
 import jakarta.validation.Valid;
-import minha.api.MinhaAPI.paciente.*;
+import minha.api.MinhaAPI.domain.paciente.DadosDetalhamentoPaciente;
+import minha.api.MinhaAPI.domain.paciente.DadosListagemPaciente;
+import minha.api.MinhaAPI.domain.paciente.Paciente;
+import minha.api.MinhaAPI.domain.paciente.PacienteRepository;
+import minha.api.MinhaAPI.domain.paciente.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

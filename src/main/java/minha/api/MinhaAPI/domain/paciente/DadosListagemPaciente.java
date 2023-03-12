@@ -1,6 +1,6 @@
-package minha.api.MinhaAPI.paciente;
+package minha.api.MinhaAPI.domain.paciente;
 
-import minha.api.MinhaAPI.endereco.Endereco;
+import minha.api.MinhaAPI.domain.endereco.Endereco;
 
 public record DadosListagemPaciente(Long id, String nome, String email, String cpf, String telefone, Endereco endereco) {
     public DadosListagemPaciente(Paciente paciente) {

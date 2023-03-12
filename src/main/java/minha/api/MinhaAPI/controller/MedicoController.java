@@ -1,9 +1,11 @@
 package minha.api.MinhaAPI.controller;
 
 import jakarta.validation.Valid;
-import minha.api.MinhaAPI.endereco.Endereco;
-import minha.api.MinhaAPI.medico.*;
-import org.apache.coyote.Response;
+import minha.api.MinhaAPI.domain.medico.DadosCadastroMedico;
+import minha.api.MinhaAPI.domain.medico.DadosListagemMedico;
+import minha.api.MinhaAPI.domain.medico.Medico;
+import minha.api.MinhaAPI.domain.medico.MedicoRepository;
+import minha.api.MinhaAPI.domain.medico.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,8 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("medicos")

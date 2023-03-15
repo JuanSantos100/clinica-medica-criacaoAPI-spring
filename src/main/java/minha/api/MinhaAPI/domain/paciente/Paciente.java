@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import minha.api.MinhaAPI.domain.endereco.Endereco;
 @Table(name = "pacientes")
-@Entity(name = "paciente")
+@Entity(name = "Paciente")
 @Getter
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")

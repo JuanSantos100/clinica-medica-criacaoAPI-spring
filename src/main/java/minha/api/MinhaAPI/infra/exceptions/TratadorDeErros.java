@@ -1,4 +1,4 @@
-package minha.api.MinhaAPI.infra;
+package minha.api.MinhaAPI.infra.exceptions;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;

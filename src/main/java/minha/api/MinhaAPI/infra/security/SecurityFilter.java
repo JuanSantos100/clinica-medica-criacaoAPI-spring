@@ -16,11 +16,11 @@ public class SecurityFilter extends OncePerRequestFilter {
     private TokenService tokenService; //Injeção de dependência
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException{
         var tokenJWT = recuperarToken(request);
-        System.out.println("token: " + tokenJWT);
-        var subject = tokenService.getSubject(tokenJWT);
-        System.out.println(subject);
+
+       //var subject = tokenService.getSubject(tokenJWT);
+       // System.out.println(subject);
 
         filterChain.doFilter(request, response);
     }

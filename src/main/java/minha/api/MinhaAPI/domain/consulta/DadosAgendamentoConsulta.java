@@ -2,6 +2,7 @@ package minha.api.MinhaAPI.domain.consulta;
 
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotNull;
+import minha.api.MinhaAPI.domain.medico.Especialidade;
 
 import java.time.LocalDateTime;
 
@@ -12,7 +13,9 @@ public record DadosAgendamentoConsulta(
 
         @NotNull
         @Future //Datas somente para o futuro
-        LocalDateTime data
+        LocalDateTime data,
+
+        Especialidade especialidade
 
 ) {
 }

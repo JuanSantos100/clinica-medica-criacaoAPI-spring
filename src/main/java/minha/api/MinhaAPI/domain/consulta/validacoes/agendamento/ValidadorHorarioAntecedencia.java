@@ -1,4 +1,4 @@
-package minha.api.MinhaAPI.domain.consulta.validacoes;
+package minha.api.MinhaAPI.domain.consulta.validacoes.agendamento;
 
 import minha.api.MinhaAPI.domain.ValidacaoException;
 import minha.api.MinhaAPI.domain.consulta.DadosAgendamentoConsulta;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-@Component
+@Component("ValidadorHorarioAntecedenciaAgendamento")
 public class ValidadorHorarioAntecedencia implements ValidadorAgendamentoDeConsulta{
 
     public void validar(DadosAgendamentoConsulta dados) {

@@ -1,4 +1,4 @@
-package minha.api.MinhaAPI.domain.consulta.validacoes;
+package minha.api.MinhaAPI.domain.consulta.validacoes.agendamento;
 
 import minha.api.MinhaAPI.domain.ValidacaoException;
 import minha.api.MinhaAPI.domain.consulta.DadosAgendamentoConsulta;

@@ -1,11 +1,14 @@
 package minha.api.MinhaAPI.domain.consulta;
 
 import minha.api.MinhaAPI.domain.ValidacaoException;
+import minha.api.MinhaAPI.domain.consulta.validacoes.ValidadorAgendamentoDeConsulta;
 import minha.api.MinhaAPI.domain.medico.Medico;
 import minha.api.MinhaAPI.domain.medico.MedicoRepository;
 import minha.api.MinhaAPI.domain.paciente.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service //Classe de serviço, executa validações, regras de negócio
 public class AgendaDeConsultas {
@@ -19,6 +22,18 @@ public class AgendaDeConsultas {
     @Autowired
     private PacienteRepository pacienteRepository;
 
+
+    /*
+        Injeção de uma lista com a Interface:
+
+        1 - Procura todas as classe que implementam a interface
+        2 - Cria uma lista com todas essas classes
+        3 - Injeta a lista com cada uma delas
+
+     */
+    @Autowired
+    private List<ValidadorAgendamentoDeConsulta> validadores;
+
     public void agendar(DadosAgendamentoConsulta dados) {
 
         if(!pacienteRepository.existsById(dados.idPaciente())) {
@@ -28,6 +43,8 @@ public class AgendaDeConsultas {
         if(dados.idMedico() != null && !medicoRepository.existsById(dados.idMedico())) {
             throw new ValidacaoException("Id do médico informado não existe.");
         }
+
+        validadores.forEach(v -> v.validar(dados)); //Passa por todos os validadores chamando o método validar, passando os dados de agendamento
 
         var paciente = pacienteRepository.getReferenceById(dados.idPaciente());
         var medico = escolherMedicoAutomaticamente(dados);

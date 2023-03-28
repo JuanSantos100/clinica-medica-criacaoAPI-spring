@@ -10,12 +10,18 @@ import java.time.LocalDateTime;
 public interface MedicoRepository extends JpaRepository<Medico, Long> {
     Page<Medico> findAllByAtivoTrue(Pageable paginacao);
 
+
+    /*
+        Ao montar a query, o nome da tabela após o FROM precisa ser o nome da Entidade JPA
+        declarada na classe Entidade, cuja anotação é: @Entity(name = "")
+     */
+
     @Query("""
             select m from Medico m
             where m.ativo = 1
             and m.especialidade = :especialidade
             and m.id not in (
-                select c.medico.id from Consulta c
+                select c.medico.id from Consultas c
                 where c.data = :data
             )
             order by rand()

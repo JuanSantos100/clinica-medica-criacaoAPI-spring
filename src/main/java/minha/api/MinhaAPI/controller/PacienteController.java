@@ -1,5 +1,6 @@
 package minha.api.MinhaAPI.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import minha.api.MinhaAPI.domain.paciente.DadosDetalhamentoPaciente;
 import minha.api.MinhaAPI.domain.paciente.DadosListagemPaciente;
@@ -17,6 +18,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RequestMapping("pacientes")
 @RestController
+@SecurityRequirement(name = "bearer-key")
 public class PacienteController {
 
     @Autowired
